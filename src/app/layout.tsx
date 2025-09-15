@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { MSWComponent } from '@/components/ui/msw-component';
+import TanstackQueryProvider from '@/providers/react-query-provider';
 import '@/styles/globals.css';
 
 const geistSans = Geist({
@@ -29,7 +30,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MSWComponent />
-        {children}
+        <TanstackQueryProvider>
+          {children}
+        </TanstackQueryProvider>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import antfu from '@antfu/eslint-config';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import tailwind from 'eslint-plugin-tailwindcss';
 
@@ -33,6 +34,8 @@ export default antfu(
   jsxA11y.flatConfigs.recommended,
   // --- Tailwind CSS Rules ---
   ...tailwind.configs['flat/recommended'],
+  // --- TanStack Query Rules ---
+  ...pluginQuery.configs['flat/recommended'],
   {
     settings: {
       tailwindcss: {
