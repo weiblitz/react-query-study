@@ -5,6 +5,7 @@ import { delay, http, HttpResponse } from 'msw';
 export const handlers = [
   http.get('https://my.backend/book', () => {
     const book: Book = {
+      id: faker.string.uuid(),
       title: 'Lord of the Rings',
       imageUrl: '/book-cover.jpg',
       description:
@@ -28,6 +29,7 @@ export const handlers = [
   http.get('/books', async () => {
     await delay(1000);
     const books: Book[] = Array.from({ length: 10 }, () => ({
+      id: faker.string.uuid(),
       title: faker.lorem.words(3),
       description: faker.lorem.paragraphs(2),
       imageUrl: faker.image.urlPicsumPhotos({ width: 300, height: 400 }),

@@ -1,8 +1,11 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   eslint: {
     dirs: ['.'],
+  },
+  images: {
+    domains: ['picsum.photos'],
   },
   /* config options here */
 };
